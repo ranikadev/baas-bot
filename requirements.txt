@@ -6,4 +6,6 @@ tweepy==4.14.0
 requests==2.31.0
 cryptography==41.0.7
 python-dotenv==1.0.0
-alembic==1.12.1  # For DB migrations (optional)
+alembic==1.12.1 
+gunicorn==21.2.0  # For DB migrations (optional)
+ 
