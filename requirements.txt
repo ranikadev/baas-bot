@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+sqlalchemy==2.0.23
+apscheduler==3.10.4
+tweepy==4.14.0
+requests==2.31.0
+cryptography==41.0.7
+python-dotenv==1.0.0
+alembic==1.12.1  # For DB migrations (optional)
