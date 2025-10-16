@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./baas_bot.db  # Or postgres://user:pass@db:5432/baas
+      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}  # Generate: python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key())"
+    volumes:
+      - .:/app
+  db:  # Optional Postgres for prod-like
+    image: postgres:15
+    environment:
+      POSTGRES_DB: baas
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5432:5432"
